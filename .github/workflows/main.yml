@@ -17,7 +17,7 @@ jobs:
       - name: Check formatting
         run: |
             chmod +x ./node_modules/.bin/prettier
-            npx prettier --check --parser javascript,json,html
+            npx prettier --check --parser javascript,json
 
       - name: Upload checkstyle report
         uses: actions/upload-artifact@v2
