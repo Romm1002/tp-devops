@@ -1,0 +1,24 @@
+name: Check formatting with Prettier
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  check-formatting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Check formatting
+        run: npx prettier --check .
+
+      - name: Upload checkstyle report
+        uses: actions/upload-artifact@v2
+        with:
+          name: checkstyle
+          path: checkstyle.xml
