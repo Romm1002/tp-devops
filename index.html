@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -15,36 +14,42 @@
   </head>
   <body>
     <div class="container pt-3">
-      <div class="form">
+      <div class="form" id="form">
         <h1>Formulaire de contact</h1>
         <form>
           <div class="form-floating mb-3">
             <input type="lastname" class="form-control" id="lastname" placeholder="Nom" />
             <label for="lastname">Nom</label>
+            <p id="errorLastname"></p>
           </div>
           <div class="form-floating mb-3">
             <input type="firstname" class="form-control" id="firstname" placeholder="Prénom" />
             <label for="firstname">Prénom</label>
+            <p id="errorFirstname"></p>
           </div>
           <div class="form-floating mb-3">
             <input type="email" class="form-control" id="email" placeholder="Adresse e-mail" />
             <label for="email">Adresse e-mail</label>
+            <p id="errorEmail"></p>
           </div>
           <div class="form-floating mb-3">
             <textarea class="form-control" placeholder="Commentaire..." id="comment" style="height: 100px"></textarea>
             <label for="comment">Comments</label>
           </div>
-          <button type="submit" class="btn btn-primary" id="save">Enregistrer</button>
+          <p id="errorComment"></p>
+          <button type="button" class="btn btn-primary" id="save">Enregistrer</button>
         </form>
       </div>
 
-      <div class="results">
-        <p id="result_lastname"></p>
-        <p id="result_firstname"></p>
-        <p id="result_email"></p>
-        <p id="result_comment"></p>
+      <div class="results text-center" id="results" style="display: none">
+        <h1>Merci pour votre demande de contact !!</h1>
+        <h5 id="result_lastname"></h5>
+        <h5 id="result_firstname"></h5>
+        <h5 id="result_email"></h5>
+        <h5 id="result_comment"></h5>
       </div>
     </div>
+    <script type="module" src="./main.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"

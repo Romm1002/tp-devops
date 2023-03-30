@@ -5,4 +5,4 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./templates:/usr/share/nginx/html
+      - .:/usr/share/nginx/html
