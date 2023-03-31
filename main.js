@@ -9,7 +9,7 @@ btn.addEventListener('click', () => {
   let error = 0;
 
   if (!isEmailValid(email)) {
-    document.getElementById('errorEmail').innerHTML = 'email non valide';
+    document.getElementById('errorEmail').innerHTML = 'Email non valide';
     document.getElementById('errorEmail').style.color = 'red';
     error++;
   } else {
@@ -44,8 +44,8 @@ btn.addEventListener('click', () => {
     document.getElementById('form').style.display = 'none';
     const result = document.getElementById('results');
     result.style.display = 'block';
-    result.querySelector('#result_lastname').innerHTML = 'Prénom : ' + lastname;
-    result.querySelector('#result_firstname').innerHTML = 'Nom : ' + firstname;
+    result.querySelector('#result_lastname').innerHTML = 'Nom : ' + lastname;
+    result.querySelector('#result_firstname').innerHTML = 'Prénom : ' + firstname;
     result.querySelector('#result_email').innerHTML = 'Email : ' + email;
     result.querySelector('#result_comment').innerHTML = 'Commentaire : ' + comment;
   }
