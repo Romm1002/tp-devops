@@ -11,7 +11,7 @@ metadata:
   name: tp-devops-deployment
   namespace: tp-devops-namespace
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: tp-devops
@@ -44,11 +44,19 @@ spec:
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-secret: my-tls-secret
+    nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
   name: tp-devops-ingress
   namespace: tp-devops-namespace
 spec:
+  tls:
+  - hosts:
+    - www.tp-devops.com
+    secretName: my-tls-secret
   rules:
-    - http:
+    - host: www.tp-devops.com
+      http:
         paths:
           - path: /
             pathType: Prefix
@@ -56,4 +64,4 @@ spec:
               service:  
                 name: tp-devops-service
                 port:
-                  number: 8080
+                  name: http
