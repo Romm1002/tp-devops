@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Romm1002/tp-devops.git"
@@ -17,6 +15,8 @@
   },
   "homepage": "https://github.com/Romm1002/tp-devops#readme",
   "devDependencies": {
+    "@playwright/test": "^1.32.1",
+    "playwright": "^1.32.1",
     "prettier": "^2.8.7"
   }
 }
