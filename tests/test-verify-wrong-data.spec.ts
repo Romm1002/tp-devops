@@ -39,5 +39,5 @@ test('Verify wrong data', async ({ page }) => {
   await expect(errorLastname).toHaveText('');
   await expect(errorFirstname).toHaveText('');
   await expect(errorEmail).toHaveText('');
-  await expect(errorComment).toHaveText('')
+  await expect(errorComment).toHaveText('');
 });
